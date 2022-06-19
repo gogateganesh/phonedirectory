@@ -12,6 +12,9 @@ function App() {
     number: '9987621931'
   }]);
 
+  const [selectedIndex,updateIndex] = useState();
+
+  let contact = null;
   const deleteContact = (index) => {
     var list = contactList.filter((v, i) => {
       if (i !== index)
@@ -21,19 +24,23 @@ function App() {
   };
 
   const addContact=(obj)=>{
-    console.log(obj);
     var list = [...contactList,obj];
     setContactList(list);
     return true
   }
 
+  const updateContact = (index)=>{
+    updateIndex(index)
+    contact = contactList[index];
+    console.log(contact);
+  }
 
   return (
     <div>
-      <Form addContact={addContact} />
+      <Form addContact={addContact} selectedIndex={selectedIndex} contact={contact} />
       <div className='ProductList'>
         {contactList.map((v, index) => {
-          return <Card contact={v} key={v.number} deleteContact={deleteContact} index={index}></Card>;
+          return <Card contact={v} key={v.number} deleteContact={deleteContact} updateContact={updateContact} index={index}></Card>;
         })}
       </div>
     </div>

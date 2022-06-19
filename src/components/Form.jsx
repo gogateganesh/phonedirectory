@@ -14,12 +14,13 @@ export default function Form(props) {
             setName('')
         }
     }
-
+    //implement update functionality using useEffect hooks
     return (
         <div>
             <div className="App">
                 <h1>Phone Directory</h1>
             </div>
+            {props.contact}
             <div>
                 <div className='contactform'>
                     <div>
@@ -37,4 +38,8 @@ export default function Form(props) {
             </div>
         </div>
     );
+}
+Form.defaultProps={
+    selectedIndex : null,
+    contact: null
 }

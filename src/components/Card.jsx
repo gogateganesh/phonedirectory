@@ -10,6 +10,7 @@ export default function Card(props) {
                 <h4>{props.contact.number}</h4>
                 </div>
                 <button onClick={()=>{props.deleteContact(props.index)}}>Delete</button>
+                <button onClick={()=>{props.updateContact(props.index)}}>Update</button>
             </div>
         </>
     );
