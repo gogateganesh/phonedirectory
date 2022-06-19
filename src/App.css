@@ -1,38 +1,57 @@
-.App {
+.contactform{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-inline: 1rem;
+  padding: 10px;
+  flex-wrap: wrap;
+  border: solid black 2px;
+}
+label{
+  margin-inline: 1rem;
+}
+
+input[type="text"]
+{
+  margin-right: 10px;
+}
+.App{
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h4{
+  display: inline;
+  padding: 10px;
+  margin: 10px;
+  margin-right: 10px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.singleCard{
   display: flex;
-  flex-direction: column;
+  flex-direction:row;
+  justify-content: start;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border: solid blueviolet 1px;
+  margin:10px 10% 5px;
+  background-color: bisque;
 }
-
-.App-link {
-  color: #61dafb;
+.singleCard:hover{
+  border: solid blue 2px;
 }
+button{
+  margin-left: auto;
+  order: 2;
+  background-color: aquamarine;
+}
+button:hover{
+  cursor: pointer;
+  background-color: blue;
+}
+.singleCard div{
+  text-align: left;
+  height: 40px;
+  width: 240px;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+}
+.singleCard div h4{
+  margin-top: auto;
+  vertical-align: middle;
 }
