@@ -1,7 +1,7 @@
 import { useState } from "react";
 export default function Form(props) {
-    const [name, setName] = useState('');
-    const [number, setContact] = useState('');
+    let [name, setName] = useState('');
+    let [number, setContact] = useState('');
     const [isValid, toggelValid] = useState(false);
 
     var deleteClick = () => {
@@ -16,12 +16,13 @@ export default function Form(props) {
     }
     //implement update functionality using useEffect hooks
     return (
+        
         <div>
             <div className="App">
                 <h1>Phone Directory</h1>
             </div>
-            {props.contact}
             <div>
+            
                 <div className='contactform'>
                     <div>
                         <label htmlFor='name'>Name</label>
