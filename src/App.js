@@ -24,9 +24,21 @@ function App() {
   };
 
   const addContact=(obj)=>{
+    var found = contactList.filter((v)=>{
+      if(v.number==obj.number)
+      {
+        return v;
+      }
+    });
+    if(found.length==0)
+    {
     var list = [...contactList,obj];
     setContactList(list);
-    return true
+    return "added"
+    }
+    else{
+      return "Number already present in the book";
+    }
   }
 
   const updateContact = (index)=>{

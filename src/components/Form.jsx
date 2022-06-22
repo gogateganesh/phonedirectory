@@ -4,25 +4,25 @@ export default function Form(props) {
     let [number, setContact] = useState('');
     const [isValid, toggelValid] = useState(false);
 
-    var deleteClick = () => {
+    var onbtnclick = () => {
         var obj = {
             'name': name,
             'number': number
         }
-        if (props.addContact(obj)) {
-            setContact('')
-            setName('')
+        var otp = props.addContact(obj);
+        if(otp !== "added")
+        {
+            alert(otp);
         }
+
     }
     //implement update functionality using useEffect hooks
     return (
-        
         <div>
             <div className="App">
                 <h1>Phone Directory</h1>
             </div>
             <div>
-            
                 <div className='contactform'>
                     <div>
                         <label htmlFor='name'>Name</label>
@@ -33,7 +33,7 @@ export default function Form(props) {
                         <input type="text" id='Number' value={number} onChange={(e) => { setContact(e.target.value) }} placeholder='Enter Number'></input>
                     </div>
                     <div>
-                        <button disabled={!name||!number} onClick={() => deleteClick()}>Add</button>
+                        <button disabled={!name||!number} onClick={() => onbtnclick()}>Add</button>
                     </div>
                 </div>
             </div>
