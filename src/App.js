@@ -14,7 +14,7 @@ function App() {
 
   const [selectedIndex,updateIndex] = useState();
 
-  let contact = null;
+  const [contact,setContact] = useState(null);
   const deleteContact = (index) => {
     var list = contactList.filter((v, i) => {
       if (i !== index)
@@ -25,12 +25,12 @@ function App() {
 
   const addContact=(obj)=>{
     var found = contactList.filter((v)=>{
-      if(v.number==obj.number)
+      if(v.number===obj.number)
       {
         return v;
       }
     });
-    if(found.length==0)
+    if(found.length===0)
     {
     var list = [...contactList,obj];
     setContactList(list);
@@ -43,8 +43,8 @@ function App() {
 
   const updateContact = (index)=>{
     updateIndex(index)
-    contact = contactList[index];
-    console.log(contact);
+    var contact = contactList[index];
+    setContact(contact);
   }
 
   return (

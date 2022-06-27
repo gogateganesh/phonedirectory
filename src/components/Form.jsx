@@ -10,11 +10,14 @@ export default function Form(props) {
             'number': number
         }
         var otp = props.addContact(obj);
-        if(otp !== "added")
-        {
+        if (otp !== "added") {
             alert(otp);
         }
 
+    }
+    var setValues = ()=>{
+        setName(props.name);
+        setContact(props.number)
     }
     //implement update functionality using useEffect hooks
     return (
@@ -22,25 +25,25 @@ export default function Form(props) {
             <div className="App">
                 <h1>Phone Directory</h1>
             </div>
-            <div>
-                <div className='contactform'>
-                    <div>
-                        <label htmlFor='name'>Name</label>
-                        <input type="text" id='name' value={name} onChange={(e) => { setName(e.target.value) }} placeholder='Enter Name'></input>
-                    </div>
-                    <div>
-                        <label htmlFor='Number'>Number</label>
-                        <input type="text" id='Number' value={number} onChange={(e) => { setContact(e.target.value) }} placeholder='Enter Number'></input>
-                    </div>
-                    <div>
-                        <button disabled={!name||!number} onClick={() => onbtnclick()}>Add</button>
+                <div>
+                    <div className='contactform'>
+                        <div>
+                            <label htmlFor='name'>Name</label>
+                            <input type="text" id='name' value={name} onChange={(e) => { setName(e.target.value) }} placeholder='Enter Name'></input>
+                        </div>
+                        <div>
+                            <label htmlFor='Number'>Number</label>
+                            <input type="number" id='Number' value={number} onChange={(e) => { setContact(e.target.value) }} placeholder='Enter Number'></input>
+                        </div>
+                        <div>
+                            <button disabled={!name || !number} onClick={() => onbtnclick()}>Add</button>
+                        </div>
                     </div>
                 </div>
-            </div>
         </div>
     );
 }
-Form.defaultProps={
-    selectedIndex : null,
+Form.defaultProps = {
+    selectedIndex: null,
     contact: null
 }
