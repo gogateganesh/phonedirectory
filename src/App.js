@@ -12,7 +12,7 @@ function App() {
     number: '9987621931'
   }]);
 
-  const [selectedIndex,updateIndex] = useState();
+  const [selectedIndex,updateIndex] = useState(null);
 
   const [contact,setContact] = useState(null);
   const deleteContact = (index) => {
@@ -47,9 +47,16 @@ function App() {
     setContact(contact);
   }
 
+  const changeNumber = (index,obj) =>{
+    var newlist =  [...contactList];
+    newlist[index] = obj;
+    setContactList(newlist);
+    setContact(null);
+    updateIndex(null);
+  }
   return (
     <div>
-      <Form addContact={addContact} selectedIndex={selectedIndex} contact={contact} />
+      <Form addContact={addContact} changeNumber={changeNumber} selectedIndex={selectedIndex} contact={contact} />
       <div className='ProductList'>
         {contactList.map((v, index) => {
           return <Card contact={v} key={v.number} deleteContact={deleteContact} updateContact={updateContact} index={index}></Card>;
