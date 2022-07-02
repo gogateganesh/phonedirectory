@@ -1,4 +1,4 @@
-.contactform{
+.contactform {
   display: flex;
   justify-content: center;
   align-content: center;
@@ -7,51 +7,71 @@
   flex-wrap: wrap;
   border: solid black 2px;
 }
-label{
+
+label {
   margin-inline: 1rem;
 }
 
-input[type="text"]
-{
+input[type="text"] {
   margin-right: 10px;
 }
-.App{
+
+.App {
   text-align: center;
 }
-h4{
+
+h4 {
   display: inline;
   padding: 10px;
   margin: 10px;
   margin-right: 10px;
 }
-.singleCard{
+
+.singleCard {
   display: flex;
-  flex-direction:row;
+  flex-direction: row;
   justify-content: start;
   align-items: center;
   border: solid blueviolet 1px;
-  margin:10px 10% 5px;
+  margin: 10px 10% 5px;
   background-color: bisque;
 }
-.singleCard:hover{
+
+.singleCard:hover {
   border: solid blue 2px;
 }
-button{
+
+button {
   margin-left: auto;
   order: 2;
   background-color: aquamarine;
 }
-button:hover{
+
+button:hover {
   cursor: pointer;
   background-color: blue;
 }
-.singleCard div{
+
+.singleCard div {
   text-align: left;
   height: 40px;
   width: 240px;
 
 }
-.singleCard div h4{
+
+.singleCard div h4 {
   margin-top: auto;
   vertical-align: middle;
+}
+
+.h1{
+  justify-self: center;
+  color: red;
+}
+.navbar {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  background: antiquewhite;
+  align-items: center;
 }

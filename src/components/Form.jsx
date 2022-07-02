@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 export default function Form(props) {
     let [name, setName] = useState('');
     let [number, setContact] = useState('');
-    const [isValid, toggelValid] = useState(false);
 
     var onbtnclick = () => {
         var obj = {
